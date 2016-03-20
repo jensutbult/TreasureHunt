@@ -79,6 +79,7 @@
                     </view>
                     <connections>
                         <outlet property="answer" destination="AjN-oY-oro" id="x3o-u7-djD"/>
+                        <outlet property="container" destination="I5a-DJ-J62" id="sOZ-TH-5DB"/>
                         <outlet property="question" destination="XD9-qW-2Nr" id="vBz-DE-jdj"/>
                         <outlet property="win" destination="B5c-1E-FJW" id="Jj8-Jq-Qyv"/>
                         <segue destination="pa7-oa-Hfv" kind="presentation" identifier="showClue" modalTransitionStyle="flipHorizontal" id="U08-QY-JRy"/>

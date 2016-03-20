@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var answer: UITextField!
     @IBOutlet weak var win: SKView!
+    @IBOutlet weak var container: UIView!
+    
     var scene: WinScene!
     
     let questions = [Question(question: "1 + 2", answer: "3"),
@@ -36,6 +38,7 @@ class ViewController: UIViewController {
         
 //        win.showsFPS = true
 //        win.showsNodeCount = true
+        container.alpha = 0
         win.ignoresSiblingOrder = true
         scene = WinScene(size: win.bounds.size)
         scene.scaleMode = .ResizeFill
@@ -49,10 +52,19 @@ class ViewController: UIViewController {
             self.performSegueWithIdentifier("showClue", sender: self)
             return
         }
-        question.text = "\(currentQuestion.question) = "
         scene.stop()
-        answer.text = ""
-        answer.becomeFirstResponder()
+        
+
+        UIView.animateWithDuration(1.4, animations: {
+            self.container.alpha = 0 }, completion: { value in
+                self.question.text = "\(self.currentQuestion.question) = "
+                self.answer.text = ""
+                UIView.animateWithDuration(1.4, animations: {
+                    self.container.alpha = 1
+                    }, completion: { value in
+                        self.answer.becomeFirstResponder()
+                })
+        })
     }
     
     @IBAction func answerChanged(sender: UITextField) {
@@ -60,7 +72,7 @@ class ViewController: UIViewController {
             scene.start()
             answer.resignFirstResponder()
             
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC)))
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC)))
             dispatch_after(delayTime, dispatch_get_main_queue()) {
                 self.scene.stop()
                 self.questionIndex += 1
