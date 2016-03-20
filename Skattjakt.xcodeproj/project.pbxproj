@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4AC32ED1C9E0D1800FD91BB /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AC32EC1C9E0D1800FD91BB /* SpriteKit.framework */; };
+		B4AC32EF1C9E0EEA00FD91BB /* WinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC32EE1C9E0EEA00FD91BB /* WinScene.swift */; };
 		B4E31F5B1C9DFB3B0077C7E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31F5A1C9DFB3B0077C7E0 /* AppDelegate.swift */; };
 		B4E31F5D1C9DFB3B0077C7E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E31F5C1C9DFB3B0077C7E0 /* ViewController.swift */; };
 		B4E31F601C9DFB3B0077C7E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E31F5E1C9DFB3B0077C7E0 /* Main.storyboard */; };
 		B4E31F621C9DFB3B0077C7E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E31F611C9DFB3B0077C7E0 /* Assets.xcassets */; };
 		B4E31F651C9DFB3B0077C7E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E31F631C9DFB3B0077C7E0 /* LaunchScreen.storyboard */; };
+		B4E31F6E1C9E09140077C7E0 /* Particles.sks in Resources */ = {isa = PBXBuildFile; fileRef = B4E31F6C1C9E09140077C7E0 /* Particles.sks */; };
+		B4E31F6F1C9E09140077C7E0 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = B4E31F6D1C9E09140077C7E0 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4AC32EC1C9E0D1800FD91BB /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		B4AC32EE1C9E0EEA00FD91BB /* WinScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinScene.swift; sourceTree = "<group>"; };
 		B4E31F571C9DFB3B0077C7E0 /* Skattjakt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skattjakt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E31F5A1C9DFB3B0077C7E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E31F5C1C9DFB3B0077C7E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +28,8 @@
 		B4E31F611C9DFB3B0077C7E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4E31F641C9DFB3B0077C7E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4E31F661C9DFB3B0077C7E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4E31F6C1C9E09140077C7E0 /* Particles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Particles.sks; sourceTree = "<group>"; };
+		B4E31F6D1C9E09140077C7E0 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4AC32ED1C9E0D1800FD91BB /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +47,7 @@
 		B4E31F4E1C9DFB3B0077C7E0 = {
 			isa = PBXGroup;
 			children = (
+				B4AC32EC1C9E0D1800FD91BB /* SpriteKit.framework */,
 				B4E31F591C9DFB3B0077C7E0 /* Skattjakt */,
 				B4E31F581C9DFB3B0077C7E0 /* Products */,
 			);
@@ -56,10 +66,13 @@
 			children = (
 				B4E31F5A1C9DFB3B0077C7E0 /* AppDelegate.swift */,
 				B4E31F5C1C9DFB3B0077C7E0 /* ViewController.swift */,
+				B4AC32EE1C9E0EEA00FD91BB /* WinScene.swift */,
 				B4E31F5E1C9DFB3B0077C7E0 /* Main.storyboard */,
 				B4E31F611C9DFB3B0077C7E0 /* Assets.xcassets */,
 				B4E31F631C9DFB3B0077C7E0 /* LaunchScreen.storyboard */,
 				B4E31F661C9DFB3B0077C7E0 /* Info.plist */,
+				B4E31F6C1C9E09140077C7E0 /* Particles.sks */,
+				B4E31F6D1C9E09140077C7E0 /* spark.png */,
 			);
 			path = Skattjakt;
 			sourceTree = "<group>";
@@ -96,6 +109,7 @@
 				TargetAttributes = {
 					B4E31F561C9DFB3B0077C7E0 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 785R3RY395;
 					};
 				};
 			};
@@ -122,9 +136,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E31F6F1C9E09140077C7E0 /* spark.png in Resources */,
 				B4E31F651C9DFB3B0077C7E0 /* LaunchScreen.storyboard in Resources */,
 				B4E31F621C9DFB3B0077C7E0 /* Assets.xcassets in Resources */,
 				B4E31F601C9DFB3B0077C7E0 /* Main.storyboard in Resources */,
+				B4E31F6E1C9E09140077C7E0 /* Particles.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4AC32EF1C9E0EEA00FD91BB /* WinScene.swift in Sources */,
 				B4E31F5D1C9DFB3B0077C7E0 /* ViewController.swift in Sources */,
 				B4E31F5B1C9DFB3B0077C7E0 /* AppDelegate.swift in Sources */,
 			);
@@ -249,6 +266,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Skattjakt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.Skattjakt;
@@ -260,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Skattjakt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.Skattjakt;
@@ -286,6 +305,7 @@
 				B4E31F6B1C9DFB3B0077C7E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

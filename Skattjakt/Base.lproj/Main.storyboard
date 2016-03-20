@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Skattjakt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,118 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5c-1E-FJW" customClass="SKView">
+                                <rect key="frame" x="20" y="20" width="560" height="700"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="700" id="LZo-b7-Am3"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astrids Skattjakt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEy-Jx-7Xu">
+                                <rect key="frame" x="12.5" y="70" width="575.5" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="MK3-hb-xZP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="60"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5a-DJ-J62">
+                                <rect key="frame" x="113" y="212" width="374.5" height="69.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 + 4 = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XD9-qW-2Nr">
+                                        <rect key="frame" x="0.0" y="0.0" width="269.5" height="69.5"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="55"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="7" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AjN-oY-oro">
+                                        <rect key="frame" x="274.5" y="0.0" width="100" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="eec-DK-JVF"/>
+                                        </constraints>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="55"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" keyboardAppearance="alert"/>
+                                        <connections>
+                                            <action selector="answerChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="dEy-JL-f53"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="XD9-qW-2Nr" firstAttribute="height" secondItem="I5a-DJ-J62" secondAttribute="height" id="7E6-CB-gI4"/>
+                                    <constraint firstItem="XD9-qW-2Nr" firstAttribute="trailing" secondItem="AjN-oY-oro" secondAttribute="leading" constant="-5" id="KKB-J4-15z"/>
+                                    <constraint firstAttribute="trailing" secondItem="AjN-oY-oro" secondAttribute="trailing" id="OJU-e2-aIg"/>
+                                    <constraint firstItem="XD9-qW-2Nr" firstAttribute="centerY" secondItem="I5a-DJ-J62" secondAttribute="centerY" id="bbn-QF-jSE"/>
+                                    <constraint firstItem="AjN-oY-oro" firstAttribute="centerY" secondItem="I5a-DJ-J62" secondAttribute="centerY" id="cdZ-Bt-aYt"/>
+                                    <constraint firstItem="XD9-qW-2Nr" firstAttribute="leading" secondItem="I5a-DJ-J62" secondAttribute="leading" id="hhb-VB-AoO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xEy-Jx-7Xu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1rv-JY-yNw"/>
+                            <constraint firstItem="B5c-1E-FJW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bkG-M2-z2H"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="B5c-1E-FJW" secondAttribute="leading" id="l9E-lq-FNF"/>
+                            <constraint firstItem="I5a-DJ-J62" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nFZ-OW-CgN"/>
+                            <constraint firstItem="xEy-Jx-7Xu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="pBI-g1-QgF"/>
+                            <constraint firstItem="I5a-DJ-J62" firstAttribute="top" secondItem="xEy-Jx-7Xu" secondAttribute="bottom" constant="52" id="xBj-QH-7QO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B5c-1E-FJW" secondAttribute="trailing" id="zgN-Vh-fEB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answer" destination="AjN-oY-oro" id="x3o-u7-djD"/>
+                        <outlet property="question" destination="XD9-qW-2Nr" id="vBz-DE-jdj"/>
+                        <outlet property="win" destination="B5c-1E-FJW" id="Jj8-Jq-Qyv"/>
+                        <segue destination="pa7-oa-Hfv" kind="presentation" identifier="showClue" modalTransitionStyle="flipHorizontal" id="U08-QY-JRy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="367" y="327"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cU1-0i-EhR">
+            <objects>
+                <viewController id="pa7-oa-Hfv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q7C-ym-gH9"/>
+                        <viewControllerLayoutGuide type="bottom" id="17K-PX-Wep"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nDW-to-XkC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astrids Skattjakt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53g-dt-eP0">
+                                <rect key="frame" x="12.5" y="74" width="575.5" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="uUW-zn-1BH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="60"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clue" translatesAutoresizingMaskIntoConstraints="NO" id="ysB-uI-Ypx">
+                                <rect key="frame" x="22" y="172" width="556" height="428"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="17K-PX-Wep" firstAttribute="top" secondItem="ysB-uI-Ypx" secondAttribute="bottom" id="40k-fj-vje"/>
+                            <constraint firstItem="53g-dt-eP0" firstAttribute="top" secondItem="Q7C-ym-gH9" secondAttribute="bottom" constant="54" id="7YI-Ie-f4d"/>
+                            <constraint firstItem="ysB-uI-Ypx" firstAttribute="centerX" secondItem="nDW-to-XkC" secondAttribute="centerX" id="CVT-h5-zAW"/>
+                            <constraint firstItem="53g-dt-eP0" firstAttribute="centerX" secondItem="nDW-to-XkC" secondAttribute="centerX" id="X04-5K-QA4"/>
+                            <constraint firstItem="ysB-uI-Ypx" firstAttribute="top" secondItem="53g-dt-eP0" secondAttribute="bottom" constant="8" id="zhH-A2-O2P"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T7m-ci-gTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128" y="327"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clue" width="556" height="837"/>
+    </resources>
 </document>
