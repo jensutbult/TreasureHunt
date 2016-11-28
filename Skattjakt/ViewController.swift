@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         container.alpha = 0
         win.ignoresSiblingOrder = true
         scene = WinScene(size: win.bounds.size)
-        scene.scaleMode = .ResizeFill
+        scene.scaleMode = .resizeFill
 
         win.presentScene(scene)
         loadNextQuestion()
@@ -49,17 +49,17 @@ class ViewController: UIViewController {
     
     func loadNextQuestion() {
         if questionIndex == questions.count {
-            self.performSegueWithIdentifier("showClue", sender: self)
+            self.performSegue(withIdentifier: "showClue", sender: self)
             return
         }
         scene.stop()
         
 
-        UIView.animateWithDuration(1.4, animations: {
+        UIView.animate(withDuration: 1.4, animations: {
             self.container.alpha = 0 }, completion: { value in
                 self.question.text = "\(self.currentQuestion.question) = "
                 self.answer.text = ""
-                UIView.animateWithDuration(1.4, animations: {
+                UIView.animate(withDuration: 1.4, animations: {
                     self.container.alpha = 1
                     }, completion: { value in
                         self.answer.becomeFirstResponder()
@@ -67,13 +67,13 @@ class ViewController: UIViewController {
         })
     }
     
-    @IBAction func answerChanged(sender: UITextField) {
+    @IBAction func answerChanged(_ sender: UITextField) {
         if sender.text == currentQuestion.answer {
             scene.start()
             answer.resignFirstResponder()
             
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let delayTime = DispatchTime.now() + Double(Int64(4 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: delayTime) {
                 self.scene.stop()
                 self.questionIndex += 1
                 self.loadNextQuestion()

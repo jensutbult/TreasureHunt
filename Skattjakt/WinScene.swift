@@ -11,15 +11,18 @@ import SpriteKit
 
 class WinScene: SKScene {
     
-    var emitter: SKEmitterNode!
-    var birthRate: CGFloat!
+    lazy var emitter: SKEmitterNode = {
+        [unowned self] in
+        let emitterPath = Bundle.main.path(forResource: "Particles", ofType: "sks")!
+        return NSKeyedUnarchiver.unarchiveObject(withFile: emitterPath) as! SKEmitterNode
+    }()
+    
+    var birthRate: CGFloat = 0
     
     override init(size: CGSize) {
         super.init(size: size)
-        self.backgroundColor = UIColor.blackColor()
-        let emitterPath = NSBundle.mainBundle().pathForResource("Particles", ofType: "sks")!
-        emitter = NSKeyedUnarchiver.unarchiveObjectWithFile(emitterPath) as! SKEmitterNode
-        emitter.position = CGPointMake(size.width / 2 + 80, size.height / 2)
+        self.backgroundColor = UIColor.black
+        emitter.position = CGPoint(x: size.width / 2 + 80, y: size.height / 2)
         birthRate = emitter.particleBirthRate
         emitter.particleBirthRate = 0
         self.addChild(emitter)
